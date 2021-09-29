@@ -5,8 +5,12 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+
 JNIEXPORT jdouble JNICALL Java_test_TestNative_multiply
 	(JNIEnv *, jobject, jdouble, jdouble);
+
+JNIEXPORT jstring JNICALL Java_test_TestNative_speak
+	(JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
