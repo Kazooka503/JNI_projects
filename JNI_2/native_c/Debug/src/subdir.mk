@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/native_c.cpp 
+../src/native_c.cpp \
+../src/override.cpp 
 
 OBJS += \
-./src/native_c.o 
+./src/native_c.o \
+./src/override.o 
 
 CPP_DEPS += \
-./src/native_c.d 
+./src/native_c.d \
+./src/override.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
