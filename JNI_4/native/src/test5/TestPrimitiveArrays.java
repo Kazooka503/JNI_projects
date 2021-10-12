@@ -22,7 +22,7 @@ public class TestPrimitiveArrays {
 	
 	public static void main(String[] args) {
 		TestPrimitiveArrays test = new TestPrimitiveArrays();
-		double[] result = test.linspace(0.0, 5.0, 5); // dx = 5/4 = 1.25
+		double[] result = test.linspace(0.0, 5.0, 5_000_000); // dx = 5/4 = 1.25
 		System.out.println(Arrays.toString(result));
 		double sum = test.func1(result);
 		System.out.println(sum);

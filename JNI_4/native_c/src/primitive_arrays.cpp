@@ -15,13 +15,14 @@
 JNIEXPORT jdoubleArray JNICALL Java_test5_TestPrimitiveArrays_linspace
   (JNIEnv *env, jobject TestPrimitiveArrays, jdouble start, jdouble end, jint num){
 	// create C++ array
-	jdouble carray[num];
+	//jdouble carray[num]; // allocate on stack: automatic, limited size or heap: manual, large size
+	jdouble *carray = new jdouble[num]; // heap allocation --> always returns memory address
 	jdouble dx = (end-start)/(num-1.0);
 	for(int i=0; i<num; i++){
-		//carray[i] = start + i*dx;
+		carray[i] = start + i*dx;
 		// side note 1:
 		// pointer math --> carray + 1 --> progress 8 bytes: dereference * access the value of the memory location
-		*(carray + i) = start + i*dx;
+		//*(carray + i) = start + i*dx;
 	}
 	// now create java array
 	//jdoubleArray jarray = env -> NewDoubleArray(num);
@@ -29,6 +30,8 @@ JNIEXPORT jdoubleArray JNICALL Java_test5_TestPrimitiveArrays_linspace
 
 	jdoubleArray jarray = (*env).NewDoubleArray(num);
 	(*env).SetDoubleArrayRegion(jarray, 0, num, carray);
+
+	delete[] carray;
 
 	return jarray;
 }
