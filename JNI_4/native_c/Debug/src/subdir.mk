@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../src/native_c.cpp \
 ../src/override.cpp \
+../src/primitive_arrays.cpp \
 ../src/primitives.cpp 
 
 OBJS += \
 ./src/native_c.o \
 ./src/override.o \
+./src/primitive_arrays.o \
 ./src/primitives.o 
 
 CPP_DEPS += \
 ./src/native_c.d \
 ./src/override.d \
+./src/primitive_arrays.d \
 ./src/primitives.d 
 
 
