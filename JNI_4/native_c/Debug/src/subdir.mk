@@ -8,21 +8,24 @@ CPP_SRCS += \
 ../src/object_arrays.cpp \
 ../src/override.cpp \
 ../src/primitive_arrays.cpp \
-../src/primitives.cpp 
+../src/primitives.cpp \
+../src/string_c.cpp 
 
 OBJS += \
 ./src/native_c.o \
 ./src/object_arrays.o \
 ./src/override.o \
 ./src/primitive_arrays.o \
-./src/primitives.o 
+./src/primitives.o \
+./src/string_c.o 
 
 CPP_DEPS += \
 ./src/native_c.d \
 ./src/object_arrays.d \
 ./src/override.d \
 ./src/primitive_arrays.d \
-./src/primitives.d 
+./src/primitives.d \
+./src/string_c.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
